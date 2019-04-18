@@ -238,7 +238,7 @@ def default_split_fn(r):
         return match.group(0)
 
 def plot_results(
-    allresults, *,
+    allresults,
     xy_fn=default_xy_fn,
     split_fn=default_split_fn,
     group_fn=default_split_fn,

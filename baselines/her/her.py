@@ -19,7 +19,7 @@ def mpi_average(value):
     return mpi_moments(np.array(value))[0]
 
 
-def train(*, policy, rollout_worker, evaluator,
+def train(policy, rollout_worker, evaluator,
           n_epochs, n_test_rollouts, n_cycles, n_batches, policy_save_interval,
           save_path, demo_file, **kwargs):
     rank = MPI.COMM_WORLD.Get_rank()
@@ -84,7 +84,7 @@ def train(*, policy, rollout_worker, evaluator,
     return policy
 
 
-def learn(*, network, env, total_timesteps,
+def learn(network, env, total_timesteps,
     seed=None,
     eval_env=None,
     replay_strategy='future',
